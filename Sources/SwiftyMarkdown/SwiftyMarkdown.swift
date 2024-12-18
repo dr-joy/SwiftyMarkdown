@@ -550,9 +550,8 @@ extension SwiftyMarkdown {
         paragraphStyle.paragraphSpacing = lineProperties.paragraphSpacing
         attributes[.paragraphStyle] = paragraphStyle
 		
-		
 		for token in finalTokens {
-			attributes[.font] = self.font(for: line)
+            attributes[.font] = self.font(for: line).withSize(body.fontSize)
 			attributes[.link] = nil
 			attributes[.strikethroughStyle] = nil
 			attributes[.foregroundColor] = self.color(for: line)
